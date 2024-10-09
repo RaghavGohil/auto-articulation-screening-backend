@@ -46,6 +46,7 @@ def process_audio_file(file_info):
             if mfcc_features is not None:
                 save_mfcc_to_csv(mfcc_features, csv_file)
 
-convert_mp3_to_wav('cat_test_3.mp3','cat_test_3.wav')
-mfcc = extract_mfcc_features('cat_test_3.wav')
-save_mfcc_to_csv(mfcc,'cat_mfcc_3')
+x = input('Enter filename\n')
+convert_mp3_to_wav(f'{x}.mp3',f'{x}.wav')
+mfcc = extract_mfcc_features(f'{x}.wav')
+save_mfcc_to_csv(mfcc,f'{x}_mfcc')
